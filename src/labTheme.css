@@ -1,0 +1,292 @@
+/* Live Capture in the twin's visual language: the twin's palette mapped onto this page's tokens, its
+   fixed glass header (from twin.css) in place of the old top bar, and its mono section labels. */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #F4F3F8;
+  --muted: #9E98B3;
+  --line: rgba(158, 152, 179, .15);
+  --line-strong: rgba(139, 92, 246, .48);
+  --panel: rgba(24, 20, 36, .92);
+  --panel-strong: #181424;
+  --soft: rgba(13, 12, 18, .72);
+  --teal: #8B5CF6;
+  --teal-dark: #7c4dff;
+  --green: #D9F99D;
+  --amber: #ffd27a;
+  --red: #ff5a4f;
+  --violet: #8B5CF6;
+  --space-0: #0D0C12;
+  --space-1: #13101c;
+  --space-2: #181424;
+  --glow: 0 0 28px rgba(139, 92, 246, .16);
+  --curve-demand: #8B5CF6;
+  --curve-capacity: #D9F99D;
+  --curve-evidence: #9E98B3;
+  --astro-cyan: #8B5CF6;
+  --astro-blue: #8B5CF6;
+  --astro-violet: #8B5CF6;
+  --astro-gold: #D9F99D;
+  --astro-panel: rgba(24, 20, 36, .92);
+  --astro-panel-2: rgba(13, 12, 18, .84);
+  --astro-border: rgba(158, 152, 179, .15);
+  --astro-border-hot: rgba(139, 92, 246, .45);
+  --astro-glow: 0 0 35px rgba(139, 92, 246, .14);
+  --v5-text-muted: #9E98B3;
+}
+
+body.lab-body {
+  font-family: var(--font-body, "Inter", sans-serif);
+  font-size: 14px;
+  color: #F4F3F8;
+  background: radial-gradient(circle at 50% -10%, rgba(139, 92, 246, .16), transparent 45%), #0D0C12;
+}
+
+body.lab-body h1,
+body.lab-body h2 {
+  font-family: var(--font-display, "Neue Kalimat", "Anton", sans-serif);
+  letter-spacing: 0.01em;
+  color: #F4F3F8;
+}
+
+body.lab-body h3,
+body.lab-body h4,
+body.lab-body button {
+  font-family: var(--font-ui, "Space Grotesk", sans-serif);
+}
+
+.lab-body .topbar {
+  display: none !important;
+}
+
+.lab-body #app {
+  padding-top: 96px;
+}
+
+/* Header chip: what the page promises */
+.lab-top {
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  gap: 12px;
+}
+
+.lab-top .ab-brand-logo {
+  height: 48px;
+  max-width: 165px;
+}
+
+.lab-top .tw-nav {
+  justify-content: flex-start;
+}
+
+.lab-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(217, 249, 157, .38);
+  font: 500 12px/1 var(--font-mono, "JetBrains Mono", monospace);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #D9F99D;
+  background: rgba(24, 20, 36, .9);
+  white-space: nowrap;
+}
+
+.lab-chip i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #D9F99D;
+  box-shadow: 0 0 8px #D9F99D;
+}
+
+/* Page tabs as a quiet sub-menu under the header */
+.lab-body .companion-tabs {
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #181424;
+  border-bottom: 1px solid rgba(158, 152, 179, .15);
+}
+
+.lab-body .companion-tabs button {
+  border: 1px solid transparent;
+  background: none;
+  color: #9E98B3;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font: 500 14px/1.25 var(--font-ui, "Space Grotesk", sans-serif);
+  box-shadow: none;
+  transition: all 0.2s ease;
+}
+
+.lab-body .companion-tabs button:hover {
+  color: var(--tw-ink);
+  background: rgba(127, 227, 255, .06);
+}
+
+.lab-body .companion-tabs button[aria-selected="true"] {
+  color: var(--tw-ink);
+  background: rgba(127, 227, 255, .1);
+  border-color: rgba(127, 227, 255, .35);
+}
+
+/* Section labels in the twin's mono eyebrow style */
+.lab-body .section-label,
+.lab-body .brand-eyebrow {
+  font-family: var(--tw-mono);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--tw-cyan);
+}
+
+/* Tabs and toggles that hard-code the old teal (some with !important upstream) */
+html[data-theme] body.lab-body .companion-tabs {
+  background: transparent !important;
+  border-color: var(--tw-line) !important;
+}
+
+html[data-theme] body.lab-body .companion-tabs button {
+  color: var(--tw-dim) !important;
+}
+
+html[data-theme] body.lab-body .companion-tabs button[aria-selected="true"] {
+  background: rgba(127, 227, 255, .1) !important;
+  color: var(--tw-ink) !important;
+  border-color: rgba(127, 227, 255, .35) !important;
+}
+
+html[data-theme] body.lab-body .simulation-shell .anatomy-view-tabs button[aria-selected=true],
+.lab-body .capture-source-bar button[aria-pressed=true] {
+  background: rgba(127, 227, 255, .14) !important;
+  color: var(--tw-ink) !important;
+  border-color: rgba(127, 227, 255, .4) !important;
+}
+
+.lab-body #anatomical-coverage {
+  color: var(--tw-dim);
+}
+
+.lab-body .camera-facing-control button.is-active {
+  background: rgba(127, 227, 255, .16);
+  color: var(--tw-ink);
+}
+
+/* Crew records: the review panel's own palette, in navy instead of green-grey */
+html[data-theme="dark"] .lab-body .companion-shell {
+  --cp-bg: #050c18;
+  --cp-line: rgba(110, 190, 255, .18);
+  --cp-text: #dcebff;
+  --cp-muted: #8ea7c4;
+}
+
+html[data-theme="dark"] .lab-body .companion-message {
+  background: rgba(127, 227, 255, .08);
+}
+
+html[data-theme="dark"] .lab-body .companion-message[data-error="true"] {
+  background: rgba(255, 90, 79, .14);
+}
+
+html[data-theme="dark"] .lab-body .companion-sources a,
+html[data-theme="dark"] .lab-body .companion-environment a {
+  color: var(--tw-cyan);
+}
+
+.lab-body .companion-shell input[type="checkbox"] {
+  accent-color: var(--tw-cyan);
+}
+
+/* Panels that were drawn for the light theme only */
+.lab-body .engineering-band {
+  background: rgba(6, 14, 28, .7);
+  color: var(--tw-ink);
+  border-top-color: var(--tw-line);
+}
+
+.lab-body .densepose-panel {
+  background: rgba(10, 22, 40, .78);
+  color: var(--tw-ink);
+  border-bottom-color: var(--tw-line);
+}
+
+.lab-body .densepose-panel small,
+.lab-body .densepose-panel p {
+  color: var(--tw-dim);
+}
+
+@media (max-width: 1500px) {
+  .lab-chip {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .lab-body #app {
+    padding-top: 0;
+  }
+
+  .lab-top {
+    margin: 8px 16px;
+  }
+
+  .lab-top>.tw-live {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .lab-chip {
+    display: none;
+  }
+}
+
+/* Pulse and stress from the face (Live Capture) */
+.pulse-capture .pulse-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.pulse-capture .pulse-heading h4 {
+  margin: 0;
+}
+
+.pulse-readouts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 10px 0 4px;
+}
+
+.pulse-readouts>div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.pulse-readouts span {
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--v5-text-muted);
+}
+
+.pulse-capture .pulse-readouts output {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.pulse-readouts small {
+  font-size: 11px;
+  color: var(--v5-text-muted);
+}
+
+.pose-live-strip .pose-vitals {
+  flex: 0 1 auto;
+  color: #ff8fa8;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
