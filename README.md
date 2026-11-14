@@ -9,6 +9,8 @@
 
 **ASTRA** is an offline-first spacecraft medical workstation and EVA visor telemetry simulator built for deep-space crew autonomy where one-way light time to Earth ranges from **1.3 seconds (Lunar surface)** to **3–22 minutes (Mars transit)**.
 
+Website link = https://astra-lemon-chi.vercel.app/#twin
+
 Instead of comparing astronauts only against static population averages, ASTRA evaluates each crew member against their own pre-flight and early-mission personal baseline while enforcing clinical safety floors (AHA 2017 blood pressure limits, ADA 2024 hypoglycemia floors, and NEWS2 respiratory/SpO2 bounds) and a deterministic **Motion Artifact Signal Gate (`<70%`)** that suppresses false physiological alarms during active EVA movement.
 
 ### Core Capabilities
